@@ -2,6 +2,9 @@ package com.siff.meetneat;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -39,5 +42,35 @@ public class ListEatMeets extends Activity {
     		Toast.makeText(getApplicationContext(), ((TextView) view).getText(),Toast.LENGTH_SHORT).show();
     	}
     };
+    
+    
+    
+    // the main menu at the bottom
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.home_menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+        case R.id.new_eatmeet:
+        	Toast.makeText(getApplicationContext(), "new EatMeet",Toast.LENGTH_SHORT).show();
+            return true;
+        case R.id.search_recipes:
+            //
+            return true;
+        case R.id.buddies:
+            //
+            return true;
+        case R.id.notifications:
+            //
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
+    }
 
 }

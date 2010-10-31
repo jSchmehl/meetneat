@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:title="New EatMeet" android:id="@+id/new_eatmeet" android:icon="@drawable/clock"></item>
+<item android:title="Search Recipes" android:id="@+id/search_recipes" android:icon="@drawable/database"></item>
+<item android:title="Your Buddies" android:id="@+id/buddies" android:icon="@drawable/happy"></item>
+<item android:title="Notifications" android:id="@+id/notifications" android:icon="@drawable/light"></item>
+</menu>

@@ -1,20 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
+
+<!--
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+    <EditText android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/usernameField"/>
+    <EditText android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/passwordField"/>
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/loginButton" android:text="Login"></Button>
 </LinearLayout>
 -->
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:padding="10dp"
-    android:textSize="16sp" >
-</TextView>
+
+<TableLayout android:id="@+id/main"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+>
+	<TextView android:id="@+id/meetneatLabel"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="60dp"
+		android:text="Meet &amp; Eat"
+		android:textSize="36sp"
+		android:gravity="center"
+	>
+	</TextView>
+	<RelativeLayout android:id="@+id/loginForm"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:padding="60dp"
+	>
+
+        <TextView android:id="@+id/usernameLabel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Username:"
+            android:layout_alignParentLeft="true"
+        ></TextView>
+        <EditText android:id="@+id/usernameField"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="user"
+            android:textSize="16sp"
+            android:layout_below="@+id/usernameLabel"
+            android:layout_alignParentLeft="true"
+        ></EditText>
+        <TextView android:id="@+id/passwordLabel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Password:"
+            android:layout_below="@+id/usernameField"
+            android:layout_alignParentLeft="true"
+        ></TextView>
+		<EditText android:id="@+id/passwordField"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="pw"
+			android:textSize="16sp"
+			android:layout_below="@+id/passwordLabel"
+			android:layout_alignParentLeft="true"
+		></EditText>
+		<Button android:id="@+id/loginButton"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:layout_below="@+id/passwordField"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentRight="true"
+            android:onClick="doLogin"
+        ></Button>
+
+	</RelativeLayout>
+</TableLayout>

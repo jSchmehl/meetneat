@@ -1,39 +1,40 @@
 package com.siff.meetneat;
 
-import android.app.ListActivity;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-public class MeetnEat extends ListActivity {
+public class MeetnEat extends Activity {
+	
+	static final int DIALOG_LOGGING_IN = 0;
+	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, EATMEETS));
-        
-        ListView emList = getListView();
-        emList.setTextFilterEnabled(true);
-        
-        
-        emList.setOnItemClickListener(emListItemListener);
-        
-        //setContentView(R.layout.main);
+        setContentView(R.layout.main);
+
     }
     
-    private OnItemClickListener emListItemListener = new OnItemClickListener() {
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		// When clicked, show a toast with the TextView text
-		Toast.makeText(getApplicationContext(), ((TextView) view).getText(),Toast.LENGTH_SHORT).show();
-	}
-    };
+    public void doLogin(View view) {
+    	showDialog(DIALOG_LOGGING_IN);        
+        // go to [Home.Eatmeets]
+    	this.startActivity(new Intent(getApplicationContext(),ListEatMeets.class));
+    }
+    protected ProgressDialog onCreateDialog(int id) {
+    	ProgressDialog dialog = null;
+        switch(id) {
+        case DIALOG_LOGGING_IN:
+            // do the work to define the pause Dialog
+        	dialog = ProgressDialog.show(MeetnEat.this, "", "Logging in. Please wait...", true);
+            break;
+        }
+        return dialog;
+    }
     
-    static final String[] EATMEETS = new String[] {
-        "Dinner at Joe's", "Tuesday's Cook Club (Michael)", "Pre-Xmas Cooking", "making Cake for Anna'S Bday", "Tuesday's Cook Club (Jessica)"};
+    
+    
 }

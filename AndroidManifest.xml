@@ -12,7 +12,8 @@
             </intent-filter>
         </activity>
 
-    </application>
+    <activity android:name="ListEatMeets"></activity>
+</application>
     
 
 <uses-sdk android:minSdkVersion="7"></uses-sdk>
